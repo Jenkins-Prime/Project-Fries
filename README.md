@@ -39,11 +39,11 @@
 (In No Order)
 
 1. Camera Controller
-2. Procedurally Generated Terrain
-3. Character Controller
-4. Enemy A.I
-5. Boss A.I
-6. Power-Up Ability
-7. Point-System
-8. U.I
-9. (Possibly) Leaderboard
+2. Character Controller
+3. Enemy A.I
+4. Boss A.I
+5. Power-Up Ability
+6. Point-System
+7. U.I
+8. (Possibly) Leaderboard
+9. Hunger Bar
