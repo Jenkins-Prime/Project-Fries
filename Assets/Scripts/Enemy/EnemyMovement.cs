@@ -30,9 +30,9 @@ public class EnemyMovement : MonoBehaviour {
 			isGrounded = false;
 
 		if (isGrounded) {
-			Vector3 checkPos = transform.position + transform.right/2;
+			Vector3 checkPos = transform.position - transform.right/2;
 			//check for wall
-			hit = Physics2D.Raycast (checkPos, transform.right, checkDist, groundLayer);
+			hit = Physics2D.Raycast (checkPos, -transform.right, checkDist, groundLayer);
 			if (hit.collider != null) {
 				transform.Rotate(0, 180, 0);
 			} else {
@@ -46,6 +46,6 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void Move() {
-		rb2D.velocity = new Vector2 (moveSpeed * transform.right.x, rb2D.velocity.y);
+		rb2D.velocity = new Vector2 (moveSpeed * -transform.right.x, rb2D.velocity.y);
 	}
 }
