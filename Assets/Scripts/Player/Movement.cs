@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
 
 
 	private Rigidbody2D playerRB;
+	private Animator anim;
 	private GameObject spawnProjectile;
 	private bool hasShot;
 	private int randomPrefab;
@@ -19,6 +20,7 @@ public class Movement : MonoBehaviour
 	void Start () 
 	{
 		playerRB = GetComponent<Rigidbody2D> ();
+		anim = GetComponent<Animator> ();
 		spawnProjectile = GameObject.FindGameObjectWithTag ("Spawn Projectile");
 		speed = 10.0f;
 		gravity = 1.0f;
@@ -45,7 +47,16 @@ public class Movement : MonoBehaviour
 
 	private void Move(float horizontal, float speed)
 	{
-		playerRB.velocity = new Vector2 (horizontal * speed, playerRB.velocity.y - gravity);
+		if(horizontal != 0.0f)
+		{
+			playerRB.velocity = new Vector2 (horizontal * speed, playerRB.velocity.y - gravity);
+			anim.speed = 1;
+		}
+		else
+		{
+			anim.speed = 0;
+		}
+
 	}
 
 	private void Jump()
