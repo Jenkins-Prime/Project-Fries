@@ -6,14 +6,14 @@ public class Movement : MonoBehaviour
 	public float gravity;
 	public float speed;
 	public float jumpHeight;
-	public GameObject projectile;
+	public GameObject[] projectile;
 	public float projectileSpeed;
 
 
 	private Rigidbody2D playerRB;
 	private GameObject spawnProjectile;
 	private bool hasShot;
-	private float projectileDelay;
+	private int randomPrefab;
 
 	// Use this for initialization
 	void Start () 
@@ -23,9 +23,7 @@ public class Movement : MonoBehaviour
 		speed = 10.0f;
 		gravity = 1.0f;
 		jumpHeight = 20.0f;
-		projectileDelay = 2.0f;
 		hasShot = false;
-
 
 	}
 	
@@ -57,7 +55,8 @@ public class Movement : MonoBehaviour
 
 	private void Shoot()
 	{
-		GameObject projectilePrefab = (GameObject)Instantiate (projectile, spawnProjectile.transform.position, Quaternion.identity);
+		randomPrefab = Random.Range (0, projectile.Length);
+		GameObject projectilePrefab = (GameObject)Instantiate (projectile[randomPrefab], spawnProjectile.transform.position, Quaternion.identity);
 		projectilePrefab.name = "Projectile";
 		Destroy (projectilePrefab, 1.0f);
 	}
