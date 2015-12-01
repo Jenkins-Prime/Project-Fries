@@ -1,49 +1,43 @@
 fileFormatVersion: 2
-guid: 23e0f6c4094a1af42a338289417d8aec
-timeCreated: 1448708939
+guid: 8cdd9c99280136841a9d3df97320dc83
+timeCreated: 1448969624
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Grasslands Spritesheet_0
-    21300002: Grasslands Spritesheet_1
-    21300004: Grasslands Spritesheet_2
-    21300006: Grasslands Spritesheet_3
-    21300008: Grasslands Spritesheet_4
-    21300010: Grasslands Spritesheet_5
-    21300012: Grasslands Spritesheet_6
-    21300014: Grasslands Spritesheet_7
-    21300016: Grasslands Spritesheet_8
-    21300018: Grasslands Spritesheet_9
-    21300020: Grasslands Spritesheet_10
-    21300022: Grasslands Spritesheet_11
-    21300024: Grasslands Spritesheet_12
-    21300026: Grasslands Spritesheet_13
-    21300028: Grasslands Spritesheet_14
-    21300030: Grasslands Spritesheet_15
-    21300032: Grasslands Spritesheet_16
-    21300034: Grasslands Spritesheet_17
-    21300036: Grasslands Spritesheet_18
-    21300038: Grasslands Spritesheet_19
-    21300040: Grasslands Spritesheet_20
-    21300042: Grasslands Spritesheet_21
-    21300044: Grasslands Spritesheet_22
-    21300046: Grasslands Spritesheet_23
-    21300048: Grasslands Spritesheet_24
-    21300050: Grasslands Spritesheet_25
-    21300052: Grasslands Spritesheet_26
-    21300054: Grasslands Spritesheet_27
-    21300056: Grasslands Spritesheet_28
-    21300058: Grasslands Spritesheet_29
-    21300060: Grasslands Spritesheet_30
-    21300062: Grasslands Spritesheet_31
-    21300064: Grasslands Spritesheet_32
-    21300066: Grasslands Spritesheet_33
-    21300068: Grasslands Spritesheet_34
-    21300070: Grasslands Spritesheet_35
-    21300072: Grasslands Spritesheet_36
-    21300074: Grasslands Spritesheet_37
-    21300076: Grasslands Spritesheet_38
-    21300078: Grasslands Spritesheet_39
+    21300000: Ground_left
+    21300002: Ground_center
+    21300004: Ground_right
+    21300006: Ground_single
+    21300008: Ground_block
+    21300010: Slope_right
+    21300012: Slope_left
+    21300014: Slope_right2
+    21300016: Slope_left2
+    21300018: Rock
+    21300020: Underground
+    21300022: Undergound_1
+    21300024: Undergound_2
+    21300026: Undergound_3
+    21300028: Undergound_4
+    21300030: Undergound_5
+    21300032: Undergound_6
+    21300034: Undergound_7
+    21300036: Undergound_8
+    21300038: Undergound_9
+    21300040: Undergound_10
+    21300042: Undergound_11
+    21300044: Undergound_12
+    21300046: Undergound_13
+    21300048: Undergound_14
+    21300050: Undergound_15
+    21300052: Spike_Up
+    21300054: Spike_down
+    21300056: Spike_Yellow
+    21300058: Spike_Gold
+    21300060: Spike_Silver
+    21300062: Bush
+    21300064: Tree_1
+    21300066: Tree_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -90,403 +84,343 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Grasslands Spritesheet_0
+    - name: Ground_left
       rect:
         serializedVersion: 2
-        x: 1
-        y: 85
-        width: 14
-        height: 14
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 85
-        width: 14
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 85
-        width: 15
-        height: 14
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 85
-        width: 14
-        height: 14
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 84
-        width: 14
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 84
-        width: 14
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 84
-        width: 15
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 113
-        y: 84
-        width: 15
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 85
-        width: 15
-        height: 14
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 88
-        width: 17
-        height: 10
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 178
+        x: 0
         y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ground_center
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ground_right
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ground_single
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ground_block
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Slope_right
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Slope_left
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Slope_right2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Slope_left2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rock
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Underground
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Undergound_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spike_Up
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spike_down
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spike_Yellow
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spike_Gold
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spike_Silver
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Bush
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Tree_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
         width: 16
         height: 20
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_11
+    - name: Tree_2
       rect:
         serializedVersion: 2
-        x: 199
-        y: 80
+        x: 96
+        y: 0
         width: 18
         height: 20
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 67
-        width: 15
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 67
-        width: 16
-        height: 14
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 67
-        width: 16
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 66
-        width: 15
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_16
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 66
-        width: 15
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 66
-        width: 16
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 66
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 19
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 19
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_21
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 19
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_22
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 19
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_23
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 19
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_24
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 19
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_25
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 19
-        width: 17
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_26
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 19
-        width: 14
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_27
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 19
-        width: 17
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_28
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 19
-        width: 9
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_29
-      rect:
-        serializedVersion: 2
-        x: 179
-        y: 17
-        width: 9
-        height: 15
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_30
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 22
-        width: 15
-        height: 13
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_31
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 22
-        width: 15
-        height: 13
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_32
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 22
-        width: 15
-        height: 13
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_33
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_34
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 2
-        width: 17
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_35
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 2
-        width: 15
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_36
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 2
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_37
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 2
-        width: 15
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_38
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 2
-        width: 16
-        height: 16
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Grasslands Spritesheet_39
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 2
-        width: 17
-        height: 16
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

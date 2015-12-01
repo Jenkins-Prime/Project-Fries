@@ -4,9 +4,6 @@ using System.Collections;
 public class Enemy : MonoBehaviour {
 	public GameObject enemyPrefab;
 	GameObject enemy;
-	public float spawnRate = 1.0f;
-	public float spawnRadius = 1.0f;
-
 
 	// Use this for initialization
 	void Start () {
@@ -31,6 +28,7 @@ public class Enemy : MonoBehaviour {
 
 	void SpawnEnemy() {
 		enemy = (GameObject)Instantiate (enemyPrefab, transform.position, Quaternion.identity);
+		enemy.transform.parent = transform; //add as child on the spawner
 	}
 
 	void DespawnEnemy() {
