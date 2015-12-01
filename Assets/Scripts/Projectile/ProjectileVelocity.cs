@@ -26,9 +26,7 @@ public class ProjectileVelocity : MonoBehaviour
 	{
 		if(col.gameObject.tag == "Enemy")
 		{
-			Destroy (col.gameObject);
-			Destroy(gameObject);
-			Debug.Log ("Hit");
+			col.GetComponent<EnemyStatus>().Hit(1); //change 1 to hit amount
 		}
 	}
 }

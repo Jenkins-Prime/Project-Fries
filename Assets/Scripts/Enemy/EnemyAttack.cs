@@ -2,13 +2,16 @@
 using System.Collections;
 
 public class EnemyAttack : MonoBehaviour {
-	public int health;
 	public int attackDamage;
 	public float attackRate;
+
+	EnemyStatus status;
 
 	Transform player;
 	// Use this for initialization
 	void Start () {
+		status = GetComponent<EnemyStatus> ();
+
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 	}
 	
@@ -16,4 +19,5 @@ public class EnemyAttack : MonoBehaviour {
 	void Update () {
 	
 	}
+	
 }

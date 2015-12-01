@@ -2,18 +2,31 @@
 using System.Collections;
 
 public class EnemyMovement : MonoBehaviour {
+	public enum MovementType {
+		NoMovement,
+		LeftRight,
+		Hop
+	}
+	public MovementType movementType;
+
 	public float checkDist = 0.1f;
 	public LayerMask groundLayer;
 
 	public float moveSpeed = 1.0f;
-
+	bool hopped;
+	public float hopDistance = 1.0f;
+	public float hopHeight = 1.0f;
 	bool isGrounded;
 	RaycastHit2D hit;
 	Rigidbody2D rb2D;
+	EnemyStatus status;
 
 	// Use this for initialization
 	void Start () {
+		hopped = false;
+
 		rb2D = GetComponent<Rigidbody2D> ();
+		status = GetComponent<EnemyStatus> ();
 	}
 
 	void FixedUpdate () {
@@ -46,6 +59,17 @@ public class EnemyMovement : MonoBehaviour {
 	}
 
 	void Move() {
-		rb2D.velocity = new Vector2 (moveSpeed * -transform.right.x, rb2D.velocity.y);
+		switch (movementType) {
+			case MovementType.LeftRight:
+				rb2D.velocity = new Vector2 (moveSpeed * -transform.right.x, rb2D.velocity.y);
+			break;
+			case MovementType.Hop:
+				//WIP
+				if(!hopped) {
+					rb2D.AddForce(new Vector2(hopDistance, hopHeight));
+					hopped = true;
+				}
+			break;
+		}
 	}
 }
