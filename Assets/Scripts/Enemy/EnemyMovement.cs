@@ -31,7 +31,10 @@ public class EnemyMovement : MonoBehaviour {
 
 	void FixedUpdate () {
 		CheckForCollision ();
-		Move ();
+		if (isGrounded)
+			Move ();
+		else
+			hopped = false;
 	}
 
 	void CheckForCollision() {
@@ -64,12 +67,20 @@ public class EnemyMovement : MonoBehaviour {
 				rb2D.velocity = new Vector2 (moveSpeed * -transform.right.x, rb2D.velocity.y);
 			break;
 			case MovementType.Hop:
-				//WIP
 				if(!hopped) {
-					rb2D.AddForce(new Vector2(hopDistance, hopHeight));
+					rb2D.velocity = CalcAngularVelocity(-transform.right, 70f);
 					hopped = true;
 				}
 			break;
 		}
+	}
+
+	Vector3 CalcAngularVelocity(Vector3 dir, float angle) {
+		dir.y = 0;
+		float length = dir.magnitude;
+		float a = angle * Mathf.Deg2Rad;  // convert angle to radians
+		dir = new Vector3(length, length * Mathf.Tan(a), 0); // set y to the elevation angle
+		float vel = Mathf.Sqrt(length * Physics.gravity.magnitude / Mathf.Sin(2 * a)); // calculate the velocity magnitude
+		return vel * dir.normalized;
 	}
 }
