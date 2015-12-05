@@ -26,7 +26,7 @@ public class ProjectileVelocity : MonoBehaviour
 	{
 		if(col.gameObject.tag == "Enemy")
 		{
-			col.GetComponent<EnemyStatus>().Hit(1); //change 1 to hit amount
+
 		}
 	}
 }
