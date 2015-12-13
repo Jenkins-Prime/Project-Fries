@@ -10,6 +10,9 @@ public class ProjectileHit : MonoBehaviour {
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
 	}
+
+	void Update() {	
+	}
 	
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.collider.tag == "Enemy") {
@@ -17,6 +20,7 @@ public class ProjectileHit : MonoBehaviour {
 			Destroy(gameObject);
 		} else {
 			rb2d.velocity = Vector2.zero;
+			rb2d.angularVelocity = 0;
 			rb2d.gravityScale = 0f;
 			Destroy(gameObject, 0.5f);
 		}

@@ -6,6 +6,7 @@ public class ShootProjectile : MonoBehaviour {
 	public GameObject[] projectileList;
 	public Vector3 target;
 	public float shootAngle = 30f;
+	public float shootTorque = -15f;
 	Rigidbody2D rb2D;
 
 	// Use this for initialization
@@ -26,6 +27,7 @@ public class ShootProjectile : MonoBehaviour {
 		projectile = (GameObject)Instantiate(projectileList[i], transform.position, Quaternion.identity);
 		projectile.transform.parent = transform; //set the parent as the player
 		projectile.GetComponent<Rigidbody2D> ().velocity = ProjectionVelocity.Calculate (target, shootAngle) + rb2D.velocity;
+		projectile.GetComponent<Rigidbody2D> ().AddTorque (shootTorque);
 		Destroy(projectile, 3);
 	}
 }
