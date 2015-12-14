@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: 537b6e1b7b2e7b94c85127128acf1407
-timeCreated: 1448900547
+guid: 7ccc3671fca3a3b4f9fd92050fd5c5c5
+timeCreated: 1449994507
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LIVES HUD_0
-    21300002: LIVES HUD_1
+    21300000: HUNGER HUD_0
+    21300002: HUNGER HUD_1
+    21300004: HUNGER HUD_2
+    21300006: HUNGER HUD_3
+    21300008: HUNGER HUD_4
+    21300010: HUNGER HUD_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,23 +56,63 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: LIVES HUD_0
+    - name: HUNGER HUD_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 12
-        height: 32
+        x: 7
+        y: 2
+        width: 17
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LIVES HUD_1
+    - name: HUNGER HUD_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 0
-        width: 12
-        height: 32
+        x: 39
+        y: 2
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HUNGER HUD_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HUNGER HUD_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 2
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HUNGER HUD_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 17
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HUNGER HUD_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 2
+        width: 17
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

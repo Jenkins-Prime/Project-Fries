@@ -1,11 +1,14 @@
 fileFormatVersion: 2
-guid: 537b6e1b7b2e7b94c85127128acf1407
-timeCreated: 1448900547
+guid: 98e8f01af94d4254e8ca7138aab0cab9
+timeCreated: 1450117640
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LIVES HUD_0
-    21300002: LIVES HUD_1
+    21300000: Doctor Ice-Cream_0
+    21300002: Doctor Ice-Cream_1
+    21300004: Doctor Ice-Cream_2
+    21300006: Doctor Ice-Cream_3
+    21300008: Doctor Ice-Cream_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,25 +55,55 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: LIVES HUD_0
+    - name: Doctor Ice-Cream_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 12
-        height: 32
+        x: 16
+        y: 9
+        width: 22
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LIVES HUD_1
+    - name: Doctor Ice-Cream_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 0
-        width: 12
-        height: 32
+        x: 80
+        y: 9
+        width: 27
+        height: 52
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doctor Ice-Cream_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 9
+        width: 27
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doctor Ice-Cream_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 9
+        width: 27
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doctor Ice-Cream_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 9
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

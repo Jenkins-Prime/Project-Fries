@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 537b6e1b7b2e7b94c85127128acf1407
-timeCreated: 1448900547
+guid: c0f0e3c647036d349b7d27ae4b06af5c
+timeCreated: 1450110264
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LIVES HUD_0
-    21300002: LIVES HUD_1
+    21300000: Fairy Floss_0
+    21300002: Fairy Floss_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -52,23 +52,23 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: LIVES HUD_0
+    - name: Fairy Floss_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 0
-        width: 12
-        height: 32
+        x: 1
+        y: 1
+        width: 29
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: LIVES HUD_1
+    - name: Fairy Floss_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 0
-        width: 12
-        height: 32
+        x: 33
+        y: 1
+        width: 29
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
