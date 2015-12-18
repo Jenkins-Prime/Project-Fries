@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 30fb3ed04c09e5743ad138864c3235f7
-timeCreated: 1449139099
+guid: 11cac12689bb8c24ba5bcc451d0e9f03
+timeCreated: 1450431289
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: EVIL CUPCAKE!_0
-    21300002: EVIL CUPCAKE!_1
-    21300004: EVIL CUPCAKE!_2
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,48 +38,18 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 48
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: EVIL CUPCAKE!_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 27
-        width: 19
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: EVIL CUPCAKE!_1
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 27
-        width: 19
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: EVIL CUPCAKE!_2
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 27
-        width: 19
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

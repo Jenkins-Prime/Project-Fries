@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 30fb3ed04c09e5743ad138864c3235f7
-timeCreated: 1449139099
+guid: d164da726e8b12746aadb272804bdc5c
+timeCreated: 1450430993
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EVIL CUPCAKE!_0
-    21300002: EVIL CUPCAKE!_1
-    21300004: EVIL CUPCAKE!_2
+    21300000: Flowers_0
+    21300002: Flowers_1
+    21300004: Flowers_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,39 +47,39 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 48
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: EVIL CUPCAKE!_0
+    - name: Flowers_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 27
-        width: 19
-        height: 25
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: EVIL CUPCAKE!_1
+    - name: Flowers_1
       rect:
         serializedVersion: 2
-        x: 25
-        y: 27
-        width: 19
-        height: 24
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: EVIL CUPCAKE!_2
+    - name: Flowers_2
       rect:
         serializedVersion: 2
-        x: 47
-        y: 27
-        width: 19
-        height: 25
+        x: 32
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
