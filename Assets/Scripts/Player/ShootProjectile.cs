@@ -21,11 +21,11 @@ public class ShootProjectile : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (projectile == null) {
-			if(Input.GetButton("Attack") ) {
+			if(Input.GetButton("Fire1") ) {
 				if(currentAngle < maxAngle) {
 					currentAngle += 1;
 				}
-			} else if (Input.GetButtonUp("Attack")){
+			} else if (Input.GetButtonUp("Fire1")){
 				SpawnProjectile(Random.Range(0, projectileList.Length));
 				currentAngle = initialAngle;
 			}
