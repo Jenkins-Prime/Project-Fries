@@ -5,11 +5,14 @@ public class EnemyMovement : MonoBehaviour {
 	public enum MovementType {
 		NoMovement,
 		LeftRight,
-		Hop
+		Hop,
+		FlyHorizontal,
+		FlyVertical
 	}
 	public MovementType movementType;
 	float groundCheckDist = 0.1f;
-	float wallCheckDist = 0.7f;
+	float wallCheckDist = 0.8f;
+	float voidCheckDist = 2.1f;
 	public LayerMask groundLayer;
 
 	public float moveSpeed = 1.0f;
@@ -17,14 +20,11 @@ public class EnemyMovement : MonoBehaviour {
 	bool isGrounded;
 	RaycastHit2D hit;
 	Rigidbody2D rb2D;
-	EnemyStatus status;
 
 	// Use this for initialization
 	void Start () {
 		hopped = false;
-
 		rb2D = GetComponent<Rigidbody2D> ();
-		status = GetComponent<EnemyStatus> ();
 	}
 
 	void FixedUpdate () {
@@ -47,14 +47,14 @@ public class EnemyMovement : MonoBehaviour {
 
 	void CheckForCollision() {
 		//wall check
-		hit = Physics2D.Raycast (transform.position, transform.position + transform.right, wallCheckDist, groundLayer);
-		if (hit.collider != null) {
+		hit = Physics2D.Raycast (transform.position, transform.position - transform.right, wallCheckDist, groundLayer);
+		if (hit.collider != null) {		
 			transform.Rotate(0, 180, 0);
 		} else {
 			//ground check
-			//hit = Physics2D.Raycast (checkPos, -transform.up, groundCheckDist, groundLayer);
+			hit = Physics2D.Raycast (transform.position - transform.right, -transform.up, voidCheckDist, groundLayer);
 			if (hit.collider == null) {
-				//transform.Rotate(0, 180, 0);
+				transform.Rotate(0, 180, 0);
 			}
 		}
 	}
@@ -66,7 +66,7 @@ public class EnemyMovement : MonoBehaviour {
 			break;
 			case MovementType.Hop:
 				if(!hopped) {
-					rb2D.velocity = ProjectionVelocity.Calculate(transform.right, 70f);
+					rb2D.velocity = ProjectionVelocity.Calculate(-transform.right, 70f);
 					hopped = true;					
 				}
 			break;

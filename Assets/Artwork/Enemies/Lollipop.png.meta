@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: b05d45afb3f988c43bab3977fbb040cd
-timeCreated: 1450731622
+guid: 48deaa9922fe6d5428720deb5103b83d
+timeCreated: 1450734360
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Chocolate_0
-    21300002: Chocolate_1
-    21300004: Chocolate_2
-    21300006: Chocolate_3
+    21300000: Lollipop_0
+    21300002: Lollipop_1
+    21300004: Lollipop_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,49 +47,39 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Chocolate_0
+    - name: Lollipop_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 1
-        width: 33
-        height: 47
+        x: 7
+        y: 3
+        width: 16
+        height: 28
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Chocolate_1
+    - name: Lollipop_1
       rect:
         serializedVersion: 2
-        x: 78
-        y: 1
-        width: 33
-        height: 47
+        x: 39
+        y: 3
+        width: 16
+        height: 28
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Chocolate_2
+    - name: Lollipop_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1
-        width: 33
-        height: 47
-      alignment: 7
-      pivot: {x: .5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Chocolate_3
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 1
-        width: 33
-        height: 47
+        x: 71
+        y: 3
+        width: 16
+        height: 28
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

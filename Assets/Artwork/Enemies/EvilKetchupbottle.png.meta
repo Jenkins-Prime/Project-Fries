@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 389923b0ee017d149a451a1253a05d0c
-timeCreated: 1448446470
+timeCreated: 1450732763
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -46,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -59,8 +59,8 @@ TextureImporter:
         y: 7
         width: 18
         height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: EvilKetchupbottle_1
       rect:
@@ -69,8 +69,8 @@ TextureImporter:
         y: 7
         width: 18
         height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
