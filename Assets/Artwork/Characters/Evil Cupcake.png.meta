@@ -1,12 +1,17 @@
 fileFormatVersion: 2
 guid: 30fb3ed04c09e5743ad138864c3235f7
-timeCreated: 1449139099
+timeCreated: 1454922963
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EVIL CUPCAKE!_0
+    21300000: Evil Cupcake
     21300002: EVIL CUPCAKE!_1
     21300004: EVIL CUPCAKE!_2
+    21300006: Evil Cupcake_0
+    21300008: Evil Cupcake_1
+    21300010: Evil Cupcake_2
+    21300012: Evil Cupcake_3
+    21300014: Evil Cupcake_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,41 +52,61 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: EVIL CUPCAKE!_0
+    - name: Evil Cupcake_0
       rect:
         serializedVersion: 2
         x: 1
         y: 27
         width: 19
         height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: EVIL CUPCAKE!_1
+    - name: Evil Cupcake_1
       rect:
         serializedVersion: 2
         x: 25
         y: 27
         width: 19
         height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: EVIL CUPCAKE!_2
+    - name: Evil Cupcake_2
       rect:
         serializedVersion: 2
         x: 47
         y: 27
         width: 19
         height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Evil Cupcake_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 21
+        height: 25
+      alignment: 7
+      pivot: {x: .5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Evil Cupcake_4
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 19
+        height: 25
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
