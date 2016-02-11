@@ -19,5 +19,11 @@ public class EnemyAttack : MonoBehaviour {
 	void Update () {
 	
 	}
-	
+
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.tag == "Player") {
+			//player.knockback();
+			//player.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 10);
+		}
+	}
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d34e76e47e341d6468129517bc0c6136
-timeCreated: 1449235839
+timeCreated: 1455098455
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -55,7 +55,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -64,9 +64,9 @@ TextureImporter:
     - name: Chef_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 20
         y: 125
-        width: 37
+        width: 14
         height: 37
       alignment: 7
       pivot: {x: .5, y: 0}
@@ -74,29 +74,29 @@ TextureImporter:
     - name: Chef_1
       rect:
         serializedVersion: 2
-        x: 71
-        y: 125
-        width: 37
-        height: 37
+        x: 82
+        y: 128
+        width: 17
+        height: 34
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Chef_2
       rect:
         serializedVersion: 2
-        x: 135
-        y: 125
-        width: 37
-        height: 37
+        x: 146
+        y: 126
+        width: 16
+        height: 36
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Chef_3
       rect:
         serializedVersion: 2
-        x: 7
+        x: 20
         y: 84
-        width: 37
+        width: 11
         height: 37
       alignment: 7
       pivot: {x: .5, y: 0}
@@ -104,9 +104,9 @@ TextureImporter:
     - name: Chef_4
       rect:
         serializedVersion: 2
-        x: 70
+        x: 83
         y: 84
-        width: 37
+        width: 15
         height: 37
       alignment: 7
       pivot: {x: .5, y: 0}
@@ -114,29 +114,29 @@ TextureImporter:
     - name: Chef_5
       rect:
         serializedVersion: 2
-        x: 7
-        y: 38
-        width: 37
-        height: 37
+        x: 18
+        y: 41
+        width: 17
+        height: 34
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Chef_6
       rect:
         serializedVersion: 2
-        x: 70
-        y: 38
-        width: 37
-        height: 37
+        x: 81
+        y: 41
+        width: 18
+        height: 34
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Chef_8
       rect:
         serializedVersion: 2
-        x: 10
+        x: 17
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 7
       pivot: {x: .5, y: 0}
@@ -144,32 +144,32 @@ TextureImporter:
     - name: Chef_7
       rect:
         serializedVersion: 2
-        x: 135
-        y: 38
-        width: 37
-        height: 37
+        x: 145
+        y: 44
+        width: 14
+        height: 28
       alignment: 7
       pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Chef_9
       rect:
         serializedVersion: 2
-        x: 72
+        x: 81
         y: 1
-        width: 32
+        width: 16
         height: 32
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Chef_10
       rect:
         serializedVersion: 2
-        x: 132
-        y: 2
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        x: 133
+        y: 3
+        width: 29
+        height: 27
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

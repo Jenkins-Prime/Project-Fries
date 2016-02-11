@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyMoveLeftRight : MonoBehaviour {
 
 	float groundCheckDist = 0.1f;
-	float wallCheckDist = 0.8f;
+	float wallCheckDist = 0.6f;
 	float voidCheckDist = 2.1f;
 	public LayerMask groundLayer;
 	
@@ -37,7 +37,7 @@ public class EnemyMoveLeftRight : MonoBehaviour {
 	
 	void CheckForCollision() {
 		//wall check
-		hit = Physics2D.Raycast (transform.position, transform.position - transform.right, wallCheckDist, groundLayer);
+		hit = Physics2D.Raycast (transform.position, -transform.right, wallCheckDist, groundLayer);
 		if (hit.collider != null) {		
 			transform.Rotate(0, 180, 0);
 		} else {
