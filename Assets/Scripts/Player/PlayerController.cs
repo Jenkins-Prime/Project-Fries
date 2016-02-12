@@ -9,11 +9,17 @@ public class PlayerController : MonoBehaviour {
 	float groundCheck = 0.1f;
 	LayerMask groundLayer;
 
+	public bool hasKnockback;
+	float knockbackDuration;
+	float time;
+
 	Rigidbody2D rb2D;
 	Animator anim;
 	// Use this for initialization
 	void Start () {
 		groundLayer = 1 << LayerMask.NameToLayer ("Ground");
+		hasKnockback = false;
+		time = 0f;
 
 		rb2D = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
@@ -23,12 +29,17 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Move ();
-
-		if (!hasJumped) {
-			Jump();
-		} else {
+		if (hasKnockback) {
 			IsOnGround();
+			if(!hasJumped)
+				hasKnockback = false;
+		} else {
+			Move ();
+			if (!hasJumped) {
+				Jump ();
+			} else {
+				IsOnGround ();
+			}
 		}
 	}
 
@@ -69,5 +80,11 @@ public class PlayerController : MonoBehaviour {
 			hasJumped = true;
 			anim.SetBool("isMidair", true);
 		}
+	}
+
+	public void Knockback(Vector2 knock) {
+		hasKnockback = true;
+		hasJumped = true; //it isn't  on ground
+		rb2D.velocity = new Vector2 (knock.x, knock.y);
 	}
 }

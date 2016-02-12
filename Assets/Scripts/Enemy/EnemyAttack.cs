@@ -2,17 +2,17 @@
 using System.Collections;
 
 public class EnemyAttack : MonoBehaviour {
-	public int attackDamage;
+	public int attackDamage = 1;
 	public float attackRate;
-
-	EnemyStatus status;
-
+	
 	Transform player;
+	PlayerController playerController;
+	GameController playerHealth;
 	// Use this for initialization
 	void Start () {
-		status = GetComponent<EnemyStatus> ();
-
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		playerController = player.GetComponent<PlayerController> ();
+		playerHealth = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 	}
 	
 	// Update is called once per frame
@@ -22,8 +22,12 @@ public class EnemyAttack : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
-			//player.knockback();
-			//player.GetComponent<Rigidbody2D>().velocity = new Vector2(-1, 10);
+			if(transform.position.x < player.position.x)
+				playerController.Knockback(new Vector2(3f, 6f));
+			else
+				playerController.Knockback(new Vector2(-3f, 6f));
+
+			playerHealth.LoseHealth(attackDamage);
 		}
 	}
 }

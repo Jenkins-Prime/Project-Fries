@@ -26,7 +26,6 @@ public class EnemyStatus : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CheckSpawn ();
-		//CheckIfDead ();
 	}
 	
 	void SpawnEnemy() {
@@ -44,13 +43,6 @@ public class EnemyStatus : MonoBehaviour {
 	void DespawnEnemy() {
 		enemy.SetActive (false);
 		isDead = true;
-	}
-	
-	void CheckIfDead () {
-		if (isDead) {
-			DespawnEnemy ();
-			canRespawn = false;
-		}
 	}
 	
 	void CheckSpawn() {
@@ -79,13 +71,14 @@ public class EnemyStatus : MonoBehaviour {
 	public void Hit(int amount) {
 		health -= amount;
 		//play hit sound
-		if (health < 1) { //Die
-			isDead = true;
+		if (health < 1) {
+			Die ();
 		}
 	}
 
-	public void Reset() {
-		health = initHealth;
-		isDead = false;
+	void Die () {
+		isDead = true;
+		DespawnEnemy ();
+		canRespawn = false;
 	}
 }

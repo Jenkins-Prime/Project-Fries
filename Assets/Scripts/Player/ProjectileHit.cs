@@ -16,7 +16,7 @@ public class ProjectileHit : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D other) {
 		if (other.collider.tag == "Enemy") {
-			other.gameObject.GetComponent<EnemyStatus> ().Hit (damage);
+			other.gameObject.GetComponentInParent<EnemyStatus> ().Hit (damage);
 			Destroy(gameObject);
 		} else {
 			rb2d.velocity = Vector2.zero;
