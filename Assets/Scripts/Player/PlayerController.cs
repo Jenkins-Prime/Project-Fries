@@ -2,29 +2,37 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
+	Rigidbody2D rb2D;
+	Animator anim;
+
 	public float moveSpeed = 1.0f;
 	public float jumpHeight = 1.0f;
-	
+
 	bool hasJumped;
 	float groundCheck = 0.1f;
 	LayerMask groundLayer;
 
 	public bool hasKnockback;
-	float knockbackDuration;
-	float time;
 
-	Rigidbody2D rb2D;
-	Animator anim;
+	public bool onLadder;
+	public int ladderMode; //0 = not near ladder, 1 = near ladder, 2 = climbing ladder
+	public float ladderX;
+	public float climbSpeed = 1;
+
+	float gravityValue;
 	// Use this for initialization
 	void Start () {
-		groundLayer = 1 << LayerMask.NameToLayer ("Ground");
-		hasKnockback = false;
-		time = 0f;
-
 		rb2D = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 
+		groundLayer = 1 << LayerMask.NameToLayer ("Ground");
+		hasKnockback = false;
+
+		onLadder = false;
+		ladderMode = 0;
+
 		IsOnGround();
+		gravityValue = rb2D.gravityScale;
 	}
 	
 	// Update is called once per frame
@@ -34,6 +42,23 @@ public class PlayerController : MonoBehaviour {
 			if(!hasJumped)
 				hasKnockback = false;
 		} else {
+			if(onLadder) {
+				float verInput = Input.GetAxisRaw("Vertical");
+				if(verInput > 0) {
+					rb2D.velocity = new Vector2(rb2D.velocity.x, climbSpeed);
+					if(rb2D.gravityScale != 0f)
+						rb2D.gravityScale = 0f;
+				} else if(verInput < 0) {
+					rb2D.velocity = new Vector2(rb2D.velocity.x, -climbSpeed);
+					if(rb2D.gravityScale != 0f)
+						rb2D.gravityScale = 0f;
+				} else {
+					rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
+				}
+			} else {
+				if(rb2D.gravityScale == 0) rb2D.gravityScale = gravityValue;
+			}
+
 			Move ();
 			if (!hasJumped) {
 				Jump ();
