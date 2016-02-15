@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 537b6e1b7b2e7b94c85127128acf1407
-timeCreated: 1448900547
-licenseType: Pro
+timeCreated: 1455561840
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: LIVES HUD_0
@@ -60,7 +60,7 @@ TextureImporter:
         width: 12
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: LIVES HUD_1
       rect:

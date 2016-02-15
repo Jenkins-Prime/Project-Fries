@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAttack : MonoBehaviour {
+public class EnemyAttack : MonoBehaviour 
+{
 	public int attackDamage = 1;
 	public float attackRate;
 	
