@@ -28,7 +28,7 @@ public class EnemyAttack : MonoBehaviour
 			else
 				playerController.Knockback(new Vector2(-3f, 6f));
 
-			playerHealth.LoseHealth(attackDamage);
+			//playerHealth.LoseH(attackDamage);
 		}
 	}
 }
