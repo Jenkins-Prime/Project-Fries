@@ -16,11 +16,6 @@ public class EnemyAttack : MonoBehaviour
 		playerHealth = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
 			if(transform.position.x < player.position.x)
@@ -28,7 +23,7 @@ public class EnemyAttack : MonoBehaviour
 			else
 				playerController.Knockback(new Vector2(-3f, 6f));
 
-			//playerHealth.LoseH(attackDamage);
+			playerHealth.LoseHunger(2);
 		}
 	}
 }
