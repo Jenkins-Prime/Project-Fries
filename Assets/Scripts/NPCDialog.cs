@@ -1,55 +1,102 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
+using System.Text;
 
-public class NPCDialog : MonoBehaviour {
-	bool canShowDialog;
-	bool dialogEnabled;
-	Image dialogBox;
-	Text dialogText;
-	public string lines = "This is an example dialog text, fix me pls. :(";
+public class NPCDialog : MonoBehaviour 
+{
+	public int ID;
 
-	// Use this for initialization
-	void Start () {
-		canShowDialog = false;
-		dialogEnabled = false;
-		transform.GetChild(0).gameObject.SetActive(false);
-		dialogBox = GameObject.FindGameObjectWithTag ("DialogBox").GetComponent<Image>();
-		dialogText = GameObject.FindGameObjectWithTag ("DialogText").GetComponent<Text>();
+	public string dialogue;
+	private bool inRange;
+	private UIManager manager;
+	private SpriteRenderer speechBubble;
+	private Text dialogueText;
+	private float letterPause;
+	private bool isShowing;
+
+	void Awake()
+	{
+		manager = GameObject.FindGameObjectWithTag ("Game UI").GetComponent<UIManager> ();
+		speechBubble = gameObject.transform.GetChild (0).GetComponent<SpriteRenderer> ();
+		dialogueText = GameObject.FindGameObjectWithTag ("Game UI").transform.GetChild (0).GetChild (0).GetComponent<Text> ();
+	}
+
+	void Start()
+	{
+		speechBubble.enabled = false;
+		letterPause = 0.1f;
+		isShowing = false;
+	}
+
+	// Update is called once per frame
+	void Update () 
+	{
+		if(inRange && Input.GetButtonDown("Submit") && !isShowing)
+		{
+			manager.ShowDialogue();
+			StartCoroutine("DisplayDialogue");
+			isShowing = true;
+
+		}
+
+		if(!inRange)
+		{
+			manager.HideDialogue();
+			StopCoroutine("DisplayDialogue");
+			dialogueText.text = "";
+			isShowing = false;
+		}
+
+	}
+
+	private IEnumerator DisplayDialogue()
+	{
+		foreach(char letter in dialogue.ToCharArray())
+		{
+			dialogueText.text += letter;
+
+			if(Input.GetButton("Jump"))
+			{
+				yield return new WaitForSeconds(letterPause * 0.09f);
+			}
+			else
+			{
+				yield return new WaitForSeconds(letterPause);
+			}
+
+		}
+	}
+
+	private void ReadFile()
+	{
+		FileStream stream = new FileStream (Application.dataPath + "/Dialogue/Dialogue.txt", FileMode.Open, FileAccess.Read);
+		
+		using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+		{
+			dialogue = reader.ReadToEnd();
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (canShowDialog) {
-			if(Input.GetButtonDown("Submit")) {
-				if(!dialogEnabled) {
-					Time.timeScale = 0; //"Raw" method of pausing the game, not sure if it's good practice to use.
-					//TO DO: Import from file
-					dialogText.text = lines;
-					dialogBox.enabled = true;
-					dialogText.enabled = true;
-					dialogEnabled = true;
-				} else if(dialogEnabled) {
-					Time.timeScale = 1; //Unpause
-					dialogBox.enabled = false;
-					dialogText.enabled = false;
-					dialogEnabled = false;
-				}
-			}
+	void OnTriggerEnter2D(Collider2D other) 
+	{
+		if (other.tag == "Player") 
+		{
+			inRange = true;
+			speechBubble.enabled = true;
+			ReadFile ();
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.tag == "Player") {
-			canShowDialog = true;
-			transform.GetChild(0).gameObject.SetActive(true);
-		}
-	}
+	void OnTriggerExit2D(Collider2D other) 
+	{
+		if (other.tag == "Player") 
+		{
+			inRange = false;
+			speechBubble.enabled = false;
+			dialogue = "";
 
-	void OnTriggerExit2D(Collider2D other) {
-		if (other.tag == "Player") {
-			canShowDialog = false;
-			transform.GetChild(0).gameObject.SetActive(false);
 		}
 	}
 }
