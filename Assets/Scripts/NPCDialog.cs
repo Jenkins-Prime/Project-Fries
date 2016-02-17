@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
+using System.Text;
 
 public class NPCDialog : MonoBehaviour 
 {
-	public string lines = "This is an example dialog text, fix me pls. :(";
+	private string dialogue;
 	private bool inRange;
 	private UIManager manager;
 	private SpriteRenderer speechBubble;
@@ -17,15 +19,16 @@ public class NPCDialog : MonoBehaviour
 		manager = GameObject.FindGameObjectWithTag ("Game UI").GetComponent<UIManager> ();
 		speechBubble = gameObject.transform.GetChild (0).GetComponent<SpriteRenderer> ();
 		dialogueText = GameObject.FindGameObjectWithTag ("Game UI").transform.GetChild (0).GetChild (0).GetComponent<Text> ();
-		isShowing = false;
 	}
 
 	void Start()
 	{
 		speechBubble.enabled = false;
 		letterPause = 0.1f;
-		//dialogueText.text = lines;
+		isShowing = false;
+		ReadFile(Application.dataPath + "/Dialogue/Dialogue.txt");
 	}
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -49,7 +52,7 @@ public class NPCDialog : MonoBehaviour
 
 	private IEnumerator DisplayDialogue()
 	{
-		foreach(char letter in lines.ToCharArray())
+		foreach(char letter in dialogue.ToCharArray())
 		{
 			dialogueText.text += letter;
 
@@ -62,6 +65,16 @@ public class NPCDialog : MonoBehaviour
 				yield return new WaitForSeconds(letterPause);
 			}
 
+		}
+	}
+
+	private void ReadFile(string path)
+	{
+		FileStream stream = new FileStream (path, FileMode.Open, FileAccess.Read);
+
+		using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+		{
+			dialogue = reader.ReadToEnd();
 		}
 	}
 
