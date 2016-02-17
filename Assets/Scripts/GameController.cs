@@ -116,12 +116,13 @@ public class GameController : MonoBehaviour {
 			money = 0;
 	}
 	
-	void Die() {
-		Debug.Log ("Life Lost!");
+	public void Die() 
+	{
 		LoseLife (1);
+		Debug.Log ("Respawn");
 	}
 	
-	void GameOver() 
+	public void GameOver() 
 	{
 		Debug.Log ("Game Over!");
 	}

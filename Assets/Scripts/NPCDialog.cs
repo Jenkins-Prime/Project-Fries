@@ -6,7 +6,9 @@ using System.Text;
 
 public class NPCDialog : MonoBehaviour 
 {
-	private string dialogue;
+	public int ID;
+
+	public string dialogue;
 	private bool inRange;
 	private UIManager manager;
 	private SpriteRenderer speechBubble;
@@ -26,7 +28,6 @@ public class NPCDialog : MonoBehaviour
 		speechBubble.enabled = false;
 		letterPause = 0.1f;
 		isShowing = false;
-		ReadFile(Application.dataPath + "/Dialogue/Dialogue.txt");
 	}
 
 	// Update is called once per frame
@@ -37,6 +38,7 @@ public class NPCDialog : MonoBehaviour
 			manager.ShowDialogue();
 			StartCoroutine("DisplayDialogue");
 			isShowing = true;
+
 		}
 
 		if(!inRange)
@@ -45,7 +47,6 @@ public class NPCDialog : MonoBehaviour
 			StopCoroutine("DisplayDialogue");
 			dialogueText.text = "";
 			isShowing = false;
-
 		}
 
 	}
@@ -68,23 +69,23 @@ public class NPCDialog : MonoBehaviour
 		}
 	}
 
-	private void ReadFile(string path)
+	private void ReadFile()
 	{
-		FileStream stream = new FileStream (path, FileMode.Open, FileAccess.Read);
-
+		FileStream stream = new FileStream (Application.dataPath + "/Dialogue/Dialogue.txt", FileMode.Open, FileAccess.Read);
+		
 		using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
 		{
 			dialogue = reader.ReadToEnd();
 		}
 	}
-
-
+	
 	void OnTriggerEnter2D(Collider2D other) 
 	{
 		if (other.tag == "Player") 
 		{
 			inRange = true;
 			speechBubble.enabled = true;
+			ReadFile ();
 		}
 	}
 
@@ -94,6 +95,7 @@ public class NPCDialog : MonoBehaviour
 		{
 			inRange = false;
 			speechBubble.enabled = false;
+			dialogue = "";
 
 		}
 	}
