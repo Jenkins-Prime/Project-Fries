@@ -29,10 +29,11 @@ public class NPCDialog : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if(inRange && Input.GetButtonDown("Submit"))
+		if(inRange && Input.GetButtonDown("Submit") && !isShowing)
 		{
 			manager.ShowDialogue();
 			StartCoroutine("DisplayDialogue");
+			isShowing = true;
 		}
 
 		if(!inRange)
@@ -40,6 +41,8 @@ public class NPCDialog : MonoBehaviour
 			manager.HideDialogue();
 			StopCoroutine("DisplayDialogue");
 			dialogueText.text = "";
+			isShowing = false;
+
 		}
 
 	}
