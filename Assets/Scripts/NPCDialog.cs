@@ -9,7 +9,6 @@ public class NPCDialog : MonoBehaviour
 	public int ID;
 
 	private bool inRange;
-
 	private string dialogue;
 	private UIManager manager;
 	private SpriteRenderer speechBubble;
@@ -21,6 +20,7 @@ public class NPCDialog : MonoBehaviour
 	private GameObject npc;
 	private GameObject player;
 	private GameObject canvas;
+	
 
 	void Awake()
 	{
@@ -40,7 +40,6 @@ public class NPCDialog : MonoBehaviour
 		isShowing = false;
 		isTextComplete = false;
 		endOfDialogue.enabled = false;
-		ID = 0;
 	}
 
 	// Update is called once per frame
@@ -48,20 +47,23 @@ public class NPCDialog : MonoBehaviour
 	{
 		canvas.transform.position = new Vector3 (player.transform.position.x - 1.0f, player.transform.position.y + 1.0f, player.transform.position.z);
 
-		CanInteract ();
-
-		if(inRange && Input.GetButtonDown("Submit") && !isShowing && gameObject.name == "Sign")
+		if(Vector3.Distance(player.transform.position, npc.transform.position) < 1.0f && npc.tag == "NPC")
 		{
-				manager.ShowDialogue();
-				StartCoroutine("DisplayDialogue");
-				isShowing = true;
+			speechBubble.enabled = true;
+			inRange = true;
+
+			if(Input.GetButtonDown("Submit"))
+			{
+				CanInteract();
+			}
 		}
-
-		if(!inRange)
+		else
 		{
+			inRange = false;
+			speechBubble.enabled = false;
 			CloseDialogueBox();
 		}
-
+			
 		if(isTextComplete && Input.GetButtonDown("Submit"))
 		{
 			CloseDialogueBox();
@@ -93,7 +95,6 @@ public class NPCDialog : MonoBehaviour
 				isTextComplete = false;
 				endOfDialogue.enabled = false;
 			}
-
 
 			if(Input.GetButton("Submit"))
 			{
@@ -140,17 +141,13 @@ public class NPCDialog : MonoBehaviour
 
 	private void CanInteract()
 	{
-		if(Vector3.Distance(player.transform.position, npc.transform.position) < 1.0f)
+		if(inRange && !isShowing)
 		{
-			inRange = true;
-			speechBubble.enabled = true;
+			manager.ShowDialogue();
 			ReadFile();
-		}
-		else
-		{
-			inRange = false;
-			speechBubble.enabled = false;
-
+			StartCoroutine("DisplayDialogue");
+			isShowing = true;
+			ID = Random.Range(0, 3);
 		}
 	}
 
