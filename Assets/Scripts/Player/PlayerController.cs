@@ -8,15 +8,13 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed = 1.0f;
 	public float jumpHeight = 1.0f;
 
-	bool hasJumped;
+	bool canJump;
 	float groundCheck = 0.1f;
 	LayerMask groundLayer;
 
 	public bool hasKnockback;
 
-	public bool onLadder;
-	public int ladderMode; //0 = not near ladder, 1 = near ladder, 2 = climbing ladder
-	public float ladderX;
+	bool onLadder;
 	public float climbSpeed = 1;
 
 	float gravityValue;
@@ -29,42 +27,21 @@ public class PlayerController : MonoBehaviour {
 		hasKnockback = false;
 
 		onLadder = false;
-		ladderMode = 0;
 
-		IsOnGround();
 		gravityValue = rb2D.gravityScale;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (hasKnockback) {
-			IsOnGround();
-			if(!hasJumped)
-				hasKnockback = false;
-		} else {
-			if(onLadder) {
-				float verInput = Input.GetAxisRaw("Vertical");
-				if(verInput > 0) {
-					rb2D.velocity = new Vector2(rb2D.velocity.x, climbSpeed);
-					if(rb2D.gravityScale != 0f)
-						rb2D.gravityScale = 0f;
-				} else if(verInput < 0) {
-					rb2D.velocity = new Vector2(rb2D.velocity.x, -climbSpeed);
-					if(rb2D.gravityScale != 0f)
-						rb2D.gravityScale = 0f;
-				} else {
-					rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
-				}
-			} else {
-				if(rb2D.gravityScale == 0) rb2D.gravityScale = gravityValue;
-			}
+		GroundCheck ();
+		Move ();
 
-			Move ();
-			if (!hasJumped) {
-				Jump ();
-			} else {
-				IsOnGround ();
-			}
+		if (canJump) {
+			Jump();
+		}
+
+		if (onLadder) {
+			ClimbLadder();
 		}
 	}
 
@@ -90,26 +67,52 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void IsOnGround() {
+	void GroundCheck() {
 		RaycastHit2D hit;
 		hit = Physics2D.Raycast (transform.position, -transform.up, groundCheck, groundLayer);
+
+		//check if is on ground
 		if (hit.collider != null) {
-			hasJumped = false;
-			anim.SetBool("isMidair", false);
+			canJump = true;
+			anim.SetBool ("isMidair", false);
+		} else {
+			canJump = false;
 		}
 	}
 
 	void Jump() {
 		if (Input.GetButtonDown ("Jump")) {
 			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpHeight);
-			hasJumped = true;
+			canJump = false;
 			anim.SetBool("isMidair", true);
 		}
 	}
 
+	void ClimbLadder() {
+		float verInput = Input.GetAxisRaw("Vertical");
+		if (verInput != 0) {
+			if(rb2D.gravityScale != 0f) {
+				rb2D.gravityScale = 0f;
+			}
+			rb2D.velocity = new Vector2(rb2D.velocity.x, verInput * climbSpeed);
+		} else if(rb2D.gravityScale == 0f) { //it is climbing the ladder
+			rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
+		}
+	}
+
+	public void LadderCheck(bool b) {
+		if (b) {
+			onLadder = true;
+		} else {
+			onLadder = false;
+			rb2D.gravityScale = gravityValue;
+		}
+
+	}
+
 	public void Knockback(Vector2 knock) {
 		hasKnockback = true;
-		hasJumped = true; //it isn't  on ground
+		canJump = false; //it isn't  on ground
 		rb2D.velocity = new Vector2 (knock.x, knock.y);
 	}
 }
