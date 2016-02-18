@@ -20,7 +20,10 @@ public class NPCDialog : MonoBehaviour
 	private GameObject npc;
 	private GameObject player;
 	private GameObject canvas;
-	
+
+	private Toggle slow;
+	private Toggle fast;
+	private Toggle faster;
 
 	void Awake()
 	{
@@ -31,6 +34,10 @@ public class NPCDialog : MonoBehaviour
 		npc = GameObject.FindGameObjectWithTag("NPC");
 		player = GameObject.FindGameObjectWithTag("Player");
 		canvas = GameObject.FindGameObjectWithTag("Game UI");
+
+		slow = GameObject.FindGameObjectWithTag ("Dialogue Slow").GetComponent<Toggle> ();
+		fast = GameObject.FindGameObjectWithTag ("Dialogue Fast").GetComponent<Toggle> ();
+		faster = GameObject.FindGameObjectWithTag ("Dialogue Faster").GetComponent<Toggle> ();
 	}
 
 	void Start()
@@ -40,6 +47,9 @@ public class NPCDialog : MonoBehaviour
 		isShowing = false;
 		isTextComplete = false;
 		endOfDialogue.enabled = false;
+		slow.isOn = true;
+		fast.isOn = false;
+		faster.isOn = false;
 	}
 
 	// Update is called once per frame
@@ -47,7 +57,7 @@ public class NPCDialog : MonoBehaviour
 	{
 		canvas.transform.position = new Vector3 (player.transform.position.x - 3.0f, player.transform.position.y + 1.0f, player.transform.position.z);
 
-		if(Vector3.Distance(player.transform.position, npc.transform.position) < 1.0f && npc.tag == "NPC")
+		if(Vector3.Distance(player.transform.position, npc.transform.position) < 1.0f)
 		{
 			speechBubble.enabled = true;
 			inRange = true;
@@ -96,13 +106,17 @@ public class NPCDialog : MonoBehaviour
 				endOfDialogue.enabled = false;
 			}
 
-			if(Input.GetButton("Submit"))
-			{
-				yield return new WaitForSeconds(letterPause * 0.09f);
-			}
-			else
+			if(slow.isOn)
 			{
 				yield return new WaitForSeconds(letterPause);
+			}
+			else if(fast.isOn)
+			{
+				yield return new WaitForSeconds(letterPause * 0.2f);
+			}
+			else if(faster.isOn)
+			{
+				yield return new WaitForSeconds(letterPause * 0.01f);
 			}
 
 		}
