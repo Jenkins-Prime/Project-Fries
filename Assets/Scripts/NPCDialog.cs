@@ -45,7 +45,7 @@ public class NPCDialog : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		canvas.transform.position = new Vector3 (player.transform.position.x - 1.0f, player.transform.position.y + 1.0f, player.transform.position.z);
+		canvas.transform.position = new Vector3 (player.transform.position.x - 3.0f, player.transform.position.y + 1.0f, player.transform.position.z);
 
 		if(Vector3.Distance(player.transform.position, npc.transform.position) < 1.0f && npc.tag == "NPC")
 		{
