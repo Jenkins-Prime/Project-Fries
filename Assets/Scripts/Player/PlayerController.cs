@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 	Rigidbody2D rb2D;
-	Animator anim;
+	[HideInInspector]
+	public Animator anim;
 
 	public float moveSpeed = 1.0f;
 	public float jumpHeight = 1.0f;

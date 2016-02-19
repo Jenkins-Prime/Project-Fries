@@ -11,6 +11,7 @@ public class NPCDialog : MonoBehaviour
 	private bool inRange;
 	private string dialogue;
 	private UIManager manager;
+	private PlayerController playerController;
 	private SpriteRenderer speechBubble;
 	private Text dialogueText;
 	private Image endOfDialogue;
@@ -31,13 +32,13 @@ public class NPCDialog : MonoBehaviour
 		speechBubble = gameObject.transform.GetChild (0).GetComponent<SpriteRenderer> ();
 		dialogueText = GameObject.FindGameObjectWithTag ("Game UI").transform.GetChild (0).GetChild (0).GetComponent<Text> ();
 		endOfDialogue = GameObject.FindGameObjectWithTag ("Game UI").transform.GetChild (0).GetChild (1).GetComponent<Image> ();
-		npc = GameObject.FindGameObjectWithTag("NPC");
 		player = GameObject.FindGameObjectWithTag("Player");
+		playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 		canvas = GameObject.FindGameObjectWithTag("Game UI");
-
 		slow = GameObject.FindGameObjectWithTag ("Dialogue Slow").GetComponent<Toggle> ();
 		fast = GameObject.FindGameObjectWithTag ("Dialogue Fast").GetComponent<Toggle> ();
 		faster = GameObject.FindGameObjectWithTag ("Dialogue Faster").GetComponent<Toggle> ();
+
 	}
 
 	void Start()
@@ -57,7 +58,7 @@ public class NPCDialog : MonoBehaviour
 	{
 		canvas.transform.position = new Vector3 (player.transform.position.x - 3.0f, player.transform.position.y + 1.0f, player.transform.position.z);
 
-		if(Vector3.Distance(player.transform.position, npc.transform.position) < 1.0f)
+		if(Vector3.Distance(player.transform.position, transform.position) < 1.0f)
 		{
 			speechBubble.enabled = true;
 			inRange = true;
@@ -71,11 +72,13 @@ public class NPCDialog : MonoBehaviour
 		{
 			inRange = false;
 			speechBubble.enabled = false;
-			CloseDialogueBox();
 		}
 			
-		if(isTextComplete && Input.GetButtonDown("Submit"))
+		if(isTextComplete && Input.GetButtonDown("Submit") && inRange)
 		{
+			playerController.moveSpeed = 5.0f;
+			playerController.jumpHeight = 10.0f;
+			player.GetComponent<Animator>().enabled = true;
 			CloseDialogueBox();
 		}
 
@@ -124,33 +127,12 @@ public class NPCDialog : MonoBehaviour
 
 	private void ReadFile()
 	{
-		if(ID == 0)
-		{
-			FileStream stream = new FileStream (Application.dataPath + "/Dialogue/Dialogue.txt", FileMode.Open, FileAccess.Read);
-			
-			using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
-			{
-				dialogue = reader.ReadToEnd();
-			}
-		}
-		else if(ID == 1)
-		{
-			FileStream stream1 = new FileStream (Application.dataPath + "/Dialogue/Dialogue1.txt", FileMode.Open, FileAccess.Read);
-			
-			using (StreamReader reader1 = new StreamReader(stream1, Encoding.UTF8))
-			{
-				dialogue = reader1.ReadToEnd();
-			}
-		}
-		else if(ID == 2)
-		{
-			FileStream stream2 = new FileStream (Application.dataPath + "/Dialogue/Dialogue2.txt", FileMode.Open, FileAccess.Read);
+		FileStream stream2 = new FileStream (Application.dataPath + "/Dialogue/Dialogue" + ID + ".txt", FileMode.Open, FileAccess.Read);
 			
 			using (StreamReader reader2 = new StreamReader(stream2, Encoding.UTF8))
 			{
 				dialogue = reader2.ReadToEnd();
 			}
-		}
 	}
 
 	private void CanInteract()
@@ -161,8 +143,11 @@ public class NPCDialog : MonoBehaviour
 			ReadFile();
 			StartCoroutine("DisplayDialogue");
 			isShowing = true;
-			ID = Random.Range(0, 3);
+			playerController.moveSpeed = 0.0f;
+			playerController.jumpHeight = 0.0f;
+			player.GetComponent<Animator>().enabled = false;
 		}
+
 	}
 
 }
