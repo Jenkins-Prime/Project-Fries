@@ -23,6 +23,12 @@ public class NPCDialog : MonoBehaviour
 	private GameObject npc;
 	private GameObject player;
 	private GameObject canvas;
+	bool tagMode;
+	bool enterTag;
+	int skipLetter;
+	string tagWord;
+	string dialogueWord;
+	int tmpLength;
 
 	void Awake()
 	{
@@ -46,7 +52,8 @@ public class NPCDialog : MonoBehaviour
 		endOfDialogue.enabled = false;
 		hasInteracted = false;
 		letterPause = 0.1f;
-
+		tagMode = false;
+		skipLetter = 0;
 	}
 
 	// Update is called once per frame
@@ -103,12 +110,46 @@ public class NPCDialog : MonoBehaviour
 	{
 		foreach(char letter in dialogue.ToCharArray())
 		{
+			if(skipLetter > 0) {
+				skipLetter--;
+				continue;
+			}
+			if(letter == '<') {
+				if(tagMode) {
+					tagWord += "</color>";
+					tagMode = false;
+					enterTag = false;
+					skipLetter = 7;
+					continue;
+				} else {
+					tagWord = "<color=";
+					tagMode = true;
+					enterTag = true;
+					skipLetter = 6;
+					continue;
+				}
+			}
+			if(tagMode) {
+				if(enterTag) {
+					if(letter == '>') {
+						enterTag = false;
+						tmpLength = dialogueText.text.Length;
+					}
+					tagWord += letter;
+					continue;
+				} else {
+					dialogueWord = tagWord + letter;
+					dialogueText.text.Remove(tmpLength - 1);
+					dialogueText.text += dialogueWord + "</color>";
+				}
+			} else {
 			dialogueText.text += letter;
-
+			}
 			if(dialogueText.text.Contains(dialogue))
 			{
 				isTextComplete = true;
 				endOfDialogue.enabled = true;
+				tagMode = false;
 			}
 			else
 			{

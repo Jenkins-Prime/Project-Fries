@@ -1,1 +1,1 @@
-G'day mate, throw another shrimp on the barbie.
+G'day mate, throw another <color=red>shrimp</color> on the barbie.
