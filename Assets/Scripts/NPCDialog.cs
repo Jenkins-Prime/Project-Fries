@@ -17,12 +17,15 @@ public class NPCDialog : MonoBehaviour
 	private Text dialogueText;
 	private Image endOfDialogue;
 	private float letterPause;
+	private float slowSpeed;
+	private float fastSpeed;
 	private bool isShowing;
 	private bool isTextComplete;
 	private bool hasInteracted;
 	private GameObject npc;
 	private GameObject player;
 	private GameObject canvas;
+	private Slider textSpeed;
 	bool tagMode;
 	bool enterTag;
 	int skipLetter;
@@ -40,6 +43,7 @@ public class NPCDialog : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag("Player");
 		playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 		canvas = GameObject.FindGameObjectWithTag("Game UI");
+		textSpeed = GameObject.FindGameObjectWithTag ("Text Speed").GetComponent<Slider> ();
 
 	}
 
@@ -52,8 +56,11 @@ public class NPCDialog : MonoBehaviour
 		endOfDialogue.enabled = false;
 		hasInteracted = false;
 		letterPause = 0.1f;
+		slowSpeed = 0.5f;
+		fastSpeed = 0.01f;
 		tagMode = false;
 		skipLetter = 0;
+		textSpeed.value = 2;
 	}
 
 	// Update is called once per frame
@@ -168,7 +175,20 @@ public class NPCDialog : MonoBehaviour
 				//isTextComplete = false;
 				endOfDialogue.enabled = false;
 			}
-			yield return new WaitForSeconds(letterPause * 0.2f);
+
+			if(textSpeed.value == 1)
+			{
+				yield return new WaitForSeconds(slowSpeed);
+
+			}
+			else if(textSpeed.value == 2)
+			{
+				yield return new WaitForSeconds(letterPause);
+			}
+			else
+			{
+				yield return new WaitForSeconds(fastSpeed);
+			}
 
 		}
 	}
