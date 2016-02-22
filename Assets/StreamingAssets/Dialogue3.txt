@@ -1,0 +1,5 @@
+Testing
+<color=blue>Testing</color>
+<color=green>Testing</color>
+<color=yellow>Testing</color>
+<color=orange>Testing</color>.

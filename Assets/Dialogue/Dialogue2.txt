@@ -1,1 +1,0 @@
-This is some <color=green>placeholder</color> text, used for testing this dialogue system.

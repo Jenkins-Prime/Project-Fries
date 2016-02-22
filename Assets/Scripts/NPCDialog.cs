@@ -110,18 +110,23 @@ public class NPCDialog : MonoBehaviour
 	{
 		foreach(char letter in dialogue.ToCharArray())
 		{
-			if(skipLetter > 0) {
+			if(skipLetter > 0) 
+			{
 				skipLetter--;
 				continue;
 			}
-			if(letter == '<') {
-				if(tagMode) {
+			if(letter == '<') 
+			{
+				if(tagMode) 
+				{
 					tagWord += "</color>";
 					tagMode = false;
 					enterTag = false;
 					skipLetter = 7;
 					continue;
-				} else {
+				} 
+				else 
+				{
 					tagWord = "<color=";
 					tagMode = true;
 					enterTag = true;
@@ -129,23 +134,30 @@ public class NPCDialog : MonoBehaviour
 					continue;
 				}
 			}
-			if(tagMode) {
-				if(enterTag) {
-					if(letter == '>') {
+			if(tagMode) 
+			{
+				if(enterTag) 
+				{
+					if(letter == '>') 
+					{
 						enterTag = false;
 						tmpLength = dialogueText.text.Length;
 					}
 					tagWord += letter;
 					continue;
-				} else {
+				} 
+				else 
+				{
 					dialogueWord = tagWord + letter;
 					dialogueText.text.Remove(tmpLength - 1);
 					dialogueText.text += dialogueWord + "</color>";
 				}
-			} else {
-			dialogueText.text += letter;
+			} 
+			else 
+			{
+				dialogueText.text += letter;
 			}
-			if(dialogueText.text.Contains(dialogue))
+			if(dialogueText.text.Contains("."))
 			{
 				isTextComplete = true;
 				endOfDialogue.enabled = true;
@@ -163,7 +175,7 @@ public class NPCDialog : MonoBehaviour
 
 	private void ReadFile()
 	{
-		FileStream stream = new FileStream (Application.dataPath + "/Dialogue/Dialogue" + ID + ".txt", FileMode.Open, FileAccess.Read);
+		FileStream stream = new FileStream (Application.dataPath + "/StreamingAssets/Dialogue" + ID + ".txt", FileMode.Open, FileAccess.Read);
 			
 			using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
 			{
