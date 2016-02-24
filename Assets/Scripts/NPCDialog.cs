@@ -68,7 +68,6 @@ public class NPCDialog : MonoBehaviour
 	{
 		canvas.transform.position = new Vector3 (player.transform.position.x - 3.0f, player.transform.position.y + 1.0f, player.transform.position.z);
 
-
 		if(hasInteracted)
 		{
 			blockInteration.enabled = true;

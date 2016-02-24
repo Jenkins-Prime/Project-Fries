@@ -5,12 +5,14 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 	public Image[] lives;
 	public Image[] hunger;
-	float currentHunger;
 	public float maxHunger = 5.0f;
-	int currentLives;
 	public int maxLives = 3;
-	int money;
-	public int maxMoney = 10000;
+	public int money;
+	public int maxMoney;
+	float currentHunger;
+	int currentLives;
+
+
 
 	private float depleteRate;
 
@@ -19,6 +21,7 @@ public class GameController : MonoBehaviour {
 		currentHunger = maxHunger;
 		currentLives = maxLives;
 		money = 0;
+		maxMoney = 99999;
 		depleteRate = 0.1f * Time.deltaTime; 
 
 	}
@@ -104,10 +107,15 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	public void GainMoney(int amount) {
+	public void GainMoney(int amount) 
+	{
 		money += amount;
-		if (money > maxMoney)
+
+		if (money >= maxMoney)
+		{
 			money = maxMoney;
+		}
+			
 	}
 	
 	public void LoseMoney(int amount) {
