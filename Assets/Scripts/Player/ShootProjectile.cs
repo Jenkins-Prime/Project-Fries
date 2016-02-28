@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShootProjectile : MonoBehaviour {
+public class ShootProjectile : MonoBehaviour 
+{
 	GameObject projectile;
 	public GameObject[] projectileList;
 	float curTime;
-
-	// Use this for initialization
-	void Start () {
+	
+	void Start () 
+	{
 		curTime = 0f;
 	}
 	
@@ -23,14 +24,17 @@ public class ShootProjectile : MonoBehaviour {
 	}
 
 
-	void SpawnProjectile(int i) {
+	void SpawnProjectile(int i) 
+	{
 		Vector3 throwPos;
-		if(transform.localScale.x > 0)
-			throwPos = transform.position + transform.up + transform.right/2;
+		if (transform.localScale.x > 0)
+			throwPos = transform.position + transform.up + transform.right / 2;
 		else
-			throwPos = transform.position + transform.up - transform.right/2;
-		projectile = (GameObject)Instantiate(projectileList[i], throwPos, Quaternion.identity);
-		//projectile.transform.parent = transform; //set the parent as the player
-		Destroy(projectile, 3);
+			throwPos = transform.position + transform.up - transform.right / 2;
+
+			projectile = (GameObject)Instantiate (projectileList [i], throwPos, Quaternion.identity);
+			//projectile.transform.parent = transform; //set the parent as the player
+			Destroy(projectile, 3);
+			
 	}
 }

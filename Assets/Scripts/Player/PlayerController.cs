@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-	Rigidbody2D rb2D;
+	public Rigidbody2D rb2D;
 	[HideInInspector]
 	public Animator anim;
 
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void Jump() {
+	 void Jump() {
 		if (Input.GetButtonDown ("Jump")) {
 			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpHeight);
 			canJump = false;
