@@ -5,23 +5,21 @@ public class ProjectileController : MonoBehaviour {
 	Rigidbody2D rb2d;
 
 	public int damage = 1;
-	public float projectileSpeed = 10;
+	public float projectileSpeed = 12;
+	public float rotationSpeed = 25;
+	public Vector2 moveDirection;
 
-	int isRight;
+	float rotation;
+
 	// Use this for initialization
 	void Start () {
 		rb2d = GetComponent<Rigidbody2D> ();
-
-		if (GameObject.FindGameObjectWithTag ("Player").transform.localScale.x > 0)
-			isRight = 1;
-		else
-			isRight = -1;
-		rb2d.velocity = new Vector2 (isRight * projectileSpeed, 0);
-
+		rb2d.velocity = moveDirection * projectileSpeed;
+		rotation = (moveDirection.x != 0) ? -moveDirection.x * rotationSpeed : -moveDirection.y * rotationSpeed;
 	}
 
 	void Update() {	
-		transform.RotateAround (transform.position, transform.forward, -isRight*25);
+		transform.RotateAround (transform.position, transform.forward, rotation);
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

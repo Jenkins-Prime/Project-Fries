@@ -5,8 +5,10 @@ public class ShootProjectile : MonoBehaviour
 {
 	GameObject projectile;
 	public GameObject[] projectileList;
+	public float fireRate = 1f;
 	float curTime;
-	
+
+
 	void Start () 
 	{
 		curTime = 0f;
@@ -16,25 +18,35 @@ public class ShootProjectile : MonoBehaviour
 	void Update () {
 		curTime += Time.deltaTime;
 		if(Input.GetButtonDown("Fire1")) {
-			if(curTime > 0.5f) {
-				SpawnProjectile(Random.Range(0, projectileList.Length));
+			if(curTime > fireRate) {
+				SpawnProjectile();
 				curTime = 0f;
 			}
 		}
 	}
 
+	void SpawnProjectile() {
+		Vector3 pos;
+		Vector2 dir;
 
-	void SpawnProjectile(int i) 
-	{
-		Vector3 throwPos;
-		if (transform.localScale.x > 0)
-			throwPos = transform.position + transform.up + transform.right / 2;
-		else
-			throwPos = transform.position + transform.up - transform.right / 2;
+		if(Input.GetAxisRaw("Vertical") > 0) { //Throw up
+			pos = transform.position + transform.up;
+			dir = new Vector2(0, 1);
+		} else if (Input.GetAxisRaw("Vertical") < 0) { //Throw down
+			pos = transform.position;
+			dir = new Vector2(0, -1);
+		} else { //Horizontal throw
+			if (transform.localScale.x > 0) { //Throw right
+				pos = transform.position + transform.up + transform.right / 2;
+				dir = new Vector2(1, 0);
+			} else { //Throw left
+				pos = transform.position + transform.up - transform.right / 2;
+				dir = new Vector2(-1, 0);
+			}
+		}
 
-			projectile = (GameObject)Instantiate (projectileList [i], throwPos, Quaternion.identity);
-			//projectile.transform.parent = transform; //set the parent as the player
-			Destroy(projectile, 3);
-			
+		projectile = (GameObject)Instantiate (projectileList [Random.Range(0, projectileList.Length)], pos, Quaternion.identity);
+		projectile.GetComponent<ProjectileController> ().moveDirection = dir;
+		Destroy(projectile, 3);			
 	}
 }
