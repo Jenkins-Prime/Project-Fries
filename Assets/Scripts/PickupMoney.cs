@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PickupMoney : MonoBehaviour 
 {
+	public AudioClip pickUpSoundEffect;
 	private int money;
 	private GameController gameController;
 	private Text points;
@@ -45,6 +46,7 @@ public class PickupMoney : MonoBehaviour
 			GetComponent<SpriteRenderer>().enabled = false;
 			GetComponent<CircleCollider2D>().enabled = false;
 			hasCollected = true;
+			AudioManager.instance.PlayAudio(pickUpSoundEffect);
 			displayPoints.text = money.ToString();
 		}
 	}

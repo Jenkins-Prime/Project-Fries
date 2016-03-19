@@ -1,0 +1,30 @@
+* Character SFX
+  X Jump
+  X Land
+  X Ladder Climb
+  X Get Hit
+  X Die
+  X Respawn
+* Ememy SFX
+  - Jump
+  - Walk
+  - Fly
+  - Hit
+  - Die
+* Projectile SFX
+  X Throw
+  X Hit (on wall only?)
+* Dialog SFX
+  X Show dialog
+  - roll text (?)
+  X next text
+  X hide dialog
+* Menu SFX
+  X Show pause menu
+  X scroll options
+  X enter option
+  X hide pause menu
+* Collectibles
+  X Get Life
+  X Get Hunger
+  X Get Points

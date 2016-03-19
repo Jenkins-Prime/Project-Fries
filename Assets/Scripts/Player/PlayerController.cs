@@ -5,9 +5,12 @@ public class PlayerController : MonoBehaviour {
 	public Rigidbody2D rb2D;
 	[HideInInspector]
 	public Animator anim;
-
+	
 	public float moveSpeed = 1.0f;
 	public float jumpHeight = 1.0f;
+	public AudioClip jumpSoundEffect;
+	public AudioClip climbSoundEffect;
+	public AudioClip LandSoundEffect;
 
 	bool canJump;
 	float groundCheck = 0.1f;
@@ -65,6 +68,7 @@ public class PlayerController : MonoBehaviour {
 		else {
 			rb2D.velocity = new Vector2 (0, rb2D.velocity.y);
 			anim.SetBool ("isMoving", false);
+
 		}
 	}
 
@@ -83,6 +87,7 @@ public class PlayerController : MonoBehaviour {
 
 	 void Jump() {
 		if (Input.GetButtonDown ("Jump")) {
+			AudioManager.instance.PlayAudio(jumpSoundEffect);
 			rb2D.velocity = new Vector2 (rb2D.velocity.x, jumpHeight);
 			canJump = false;
 			anim.SetBool("isMidair", true);
@@ -96,6 +101,7 @@ public class PlayerController : MonoBehaviour {
 				rb2D.gravityScale = 0f;
 			}
 			rb2D.velocity = new Vector2(rb2D.velocity.x, verInput * climbSpeed);
+			AudioManager.instance.PlayDelayAudio(climbSoundEffect);
 		} else if(rb2D.gravityScale == 0f) { //it is climbing the ladder
 			rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
 		}

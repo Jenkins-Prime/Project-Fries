@@ -7,6 +7,9 @@ using System.Text;
 public class NPCDialog : MonoBehaviour 
 {
 	public int ID;
+	public AudioClip dialogueSoundOpenEffect;
+	public AudioClip dialogueSoundCloseEffect;
+
 
 	private bool inRange;
 	private string dialogue;
@@ -110,6 +113,7 @@ public class NPCDialog : MonoBehaviour
 		dialogueText.text = "";
 		isShowing = true;
 		hasInteracted = true;
+		AudioManager.instance.PlayAudio(dialogueSoundCloseEffect);
 	}
 
 	private IEnumerator DisplayDialogue()
@@ -213,6 +217,8 @@ public class NPCDialog : MonoBehaviour
 			playerController.moveSpeed = 0.0f;
 			playerController.jumpHeight = 0.0f;
 			player.GetComponent<Animator>().enabled = false;
+			AudioManager.instance.PlayAudio(dialogueSoundOpenEffect);
+
 		}
 
 	}

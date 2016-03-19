@@ -5,6 +5,7 @@ public class ShootProjectile : MonoBehaviour
 {
 	GameObject projectile;
 	public GameObject[] projectileList;
+	public AudioClip projectileSoundEffect;
 	public float fireRate = 1f;
 	float curTime;
 
@@ -47,6 +48,7 @@ public class ShootProjectile : MonoBehaviour
 
 		projectile = (GameObject)Instantiate (projectileList [Random.Range(0, projectileList.Length)], pos, Quaternion.identity);
 		projectile.GetComponent<ProjectileController> ().moveDirection = dir;
+		AudioManager.instance.PlayAudio(projectileSoundEffect);
 		Destroy(projectile, 3);			
 	}
 }

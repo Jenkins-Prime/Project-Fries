@@ -4,6 +4,7 @@ using System.Collections;
 public class DeathZone : MonoBehaviour 
 {
 	public GameObject playerObject;
+	public AudioClip respawnSoundEffect;
 
 	private GameController gameController;
 	private GameObject player;
@@ -32,7 +33,6 @@ public class DeathZone : MonoBehaviour
 		if(isDead)
 		{
 			playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, new Vector3(spawnPoint.transform.position.x + 10.0f, spawnPoint.transform.position.y, spawnPoint.transform.position.z), 5.0f * Time.deltaTime);
-			StartCoroutine(Respawn (10.0f));
 			player.transform.position = new Vector3(spawnPoint.transform.position.x, 1.0f, 0.0f);
 			StartCoroutine(Respawn (3.0f));
 			player.SetActive(true);
@@ -46,6 +46,7 @@ public class DeathZone : MonoBehaviour
 		{
 			player.SetActive(false);
 			isDead = true;
+			AudioManager.instance.PlayAudio(respawnSoundEffect);
 		}
 		else
 		{
