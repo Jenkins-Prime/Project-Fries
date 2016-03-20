@@ -5,13 +5,9 @@ public class LadderZone : MonoBehaviour {
 	PlayerController playerController;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () 
+	{
 		playerController = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerController> ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

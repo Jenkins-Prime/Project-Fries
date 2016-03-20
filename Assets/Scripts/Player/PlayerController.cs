@@ -44,8 +44,20 @@ public class PlayerController : MonoBehaviour {
 			Jump();
 		}
 
-		if (onLadder) {
+		if (onLadder) 
+		{
+			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
+			{
+				AudioManager.instance.PlayDelayAudio(climbSoundEffect);
+				anim.SetBool("isClimbing", true);
+				anim.SetFloat("climbSpeed", 1.0f);
+			}
+
 			ClimbLadder();
+		}
+		else
+		{
+			anim.SetBool("isClimbing", false);
 		}
 	}
 
@@ -94,23 +106,35 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void ClimbLadder() {
+	void ClimbLadder() 
+	{
 		float verInput = Input.GetAxisRaw("Vertical");
-		if (verInput != 0) {
-			if(rb2D.gravityScale != 0f) {
+		if (verInput != 0) 
+		{
+			if(rb2D.gravityScale != 0f) 
+			{
 				rb2D.gravityScale = 0f;
 			}
+
 			rb2D.velocity = new Vector2(rb2D.velocity.x, verInput * climbSpeed);
-			AudioManager.instance.PlayDelayAudio(climbSoundEffect);
-		} else if(rb2D.gravityScale == 0f) { //it is climbing the ladder
+		}
+
+		else if(rb2D.gravityScale == 0f) 
+		{   //it is climbing the ladder
 			rb2D.velocity = new Vector2(rb2D.velocity.x, 0);
+			anim.SetFloat("climbSpeed", 0.0f);
+
 		}
 	}
 
-	public void LadderCheck(bool b) {
-		if (b) {
+	public void LadderCheck(bool b) 
+	{
+		if (b) 
+		{
 			onLadder = true;
-		} else {
+		} 
+		else 
+		{
 			onLadder = false;
 			rb2D.gravityScale = gravityValue;
 		}
