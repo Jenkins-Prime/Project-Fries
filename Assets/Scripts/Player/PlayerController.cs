@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 	public bool hasKnockback;
 
 	bool onLadder;
+	bool onTop;
 	public float climbSpeed = 1;
 
 	float gravityValue;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 		hasKnockback = false;
 
 		onLadder = false;
+		onTop = false;
 
 		gravityValue = rb2D.gravityScale;
 	}
@@ -46,11 +48,12 @@ public class PlayerController : MonoBehaviour {
 
 		if (onLadder) 
 		{
+			anim.SetBool("isClimbing", true);
+
 			if(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow))
 			{
-				AudioManager.instance.PlayDelayAudio(climbSoundEffect);
-				anim.SetBool("isClimbing", true);
 				anim.SetFloat("climbSpeed", 1.0f);
+				AudioManager.instance.PlayDelayAudio(climbSoundEffect);
 			}
 
 			ClimbLadder();
@@ -140,6 +143,7 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	}
+	
 
 	public void Knockback(Vector2 knock) {
 		hasKnockback = true;

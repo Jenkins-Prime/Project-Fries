@@ -10,15 +10,21 @@ public class LadderZone : MonoBehaviour {
 		playerController = GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerController> ();
 	}
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.tag == "Player") {
+	void OnTriggerEnter2D(Collider2D other) 
+	{
+		if (other.tag == "Player")
+		{
 			playerController.LadderCheck(true);
 		}
+
 	}
 
-	void OnTriggerExit2D(Collider2D other) {
-		if (other.tag == "Player") {
+	void OnTriggerExit2D(Collider2D other) 
+	{
+		if (other.tag == "Player") 
+		{
 			playerController.LadderCheck(false);
 		}
+
 	}
 }
