@@ -18,8 +18,7 @@ public class PlayerController : MonoBehaviour {
 
 	public bool hasKnockback;
 
-	bool onLadder;
-	bool onTop;
+	public bool onLadder;
 	public float climbSpeed = 1;
 
 	float gravityValue;
@@ -32,8 +31,6 @@ public class PlayerController : MonoBehaviour {
 		hasKnockback = false;
 
 		onLadder = false;
-		onTop = false;
-
 		gravityValue = rb2D.gravityScale;
 	}
 	
@@ -55,7 +52,7 @@ public class PlayerController : MonoBehaviour {
 				anim.SetFloat("climbSpeed", 1.0f);
 				AudioManager.instance.PlayDelayAudio(climbSoundEffect);
 			}
-
+		
 			ClimbLadder();
 		}
 		else
